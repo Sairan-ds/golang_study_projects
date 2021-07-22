@@ -41,16 +41,20 @@ func main() {
 	}
 	problems := parseLines(lines)
 	correct := 0
-problemloop:
-	for i, problem := range problems {
-		timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
-		answerCh := make(chan string)
-		go func() {
-			fmt.Printf("Вопрос %v: %v =\n", i+1, problem.q)
+	answerCh := make(chan string)
+
+	go func() {
+		for {
 			var answer string
 			fmt.Scanf("%s\n", &answer)
 			answerCh <- answer
-		}()
+		}
+	}()
+
+problemloop:
+	for i, problem := range problems {
+		timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
+		fmt.Printf("Вопрос %v: %v =\n", i+1, problem.q)
 		select {
 		case <-timer.C:
 			fmt.Println("Не успела!")
