@@ -1,1 +1,3 @@
-"# golang_study_projects" 
+# golang_study_projects
+
+## Реализация учебных проектов.
