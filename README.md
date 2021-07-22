@@ -1,2 +1,3 @@
-"# golang_study_projects" \n
-Реализация учебных проектов.
+# golang_study_projects
+
+## Реализация учебных проектов.
