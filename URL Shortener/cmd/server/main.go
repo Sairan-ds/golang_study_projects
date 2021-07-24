@@ -7,5 +7,6 @@ import (
 
 func main() {
 	database.StartDb()
+	database.StartDb()
 	shortener.StartShortener()
 }
